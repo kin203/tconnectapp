@@ -3,6 +3,7 @@ package vn.tconnect.appbanhang;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -38,7 +39,7 @@ public class Slider extends AppCompatActivity {
                 if (viewPager.getCurrentItem()+1< layouts.length){
                     viewPager.setCurrentItem(viewPager.getCurrentItem()+1);
                 }else{
-                    //go to main activity
+                    startActivity(new Intent(getApplicationContext(),LoginActivity.class));
 
                 }
             }
