@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">AppBanHang</string>
+    <string name="username_ho_c_email">Username hoặc email</string>
+    <string name="nh_p_username_ho_c_email">Nhập Username hoặc Email</string>
+    <string name="nh_p_m_t_kh_u">Nhập mật khẩu</string>
+    <string name="ch_a_c_t_i_kho_n_ng_k_ngay">Chưa có tài khoản? Đăng ký ngay</string>
+    <string name="m_t_kh_u">Mật khẩu</string>
 </resources>
