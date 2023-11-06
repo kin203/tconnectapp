@@ -8,6 +8,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -41,9 +42,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
-        if (savedInstanceState ==null){
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new HomeFragment()).commit();
-            navigationView.setCheckedItem(R.id.nav_home);
+        if (savedInstanceState == null) {
+            Intent intent = new Intent(this, HomeActivity.class);
+            startActivity(intent);
+            finish(); // Tùy chọn: Đóng Activity gốc nếu bạn không muốn quay lại nó
         }
     }
 
@@ -51,39 +53,48 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.nav_home:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.nav_mouse:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+                intent = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.nav_keyboard:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+                intent = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.nav_monitor:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+                intent = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.nav_headset:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+                intent = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.nav_laptop:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+                intent = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.nav_top_product:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+                intent = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.nav_news:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+                intent = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.nav_contact:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+                intent = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.nav_logout:
