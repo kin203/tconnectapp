@@ -4,8 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".HomeActivity"
+    tools:context=".MainActivity"
     android:orientation="vertical">
+
 
     <RelativeLayout
         android:layout_height="wrap_content"
@@ -13,7 +14,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Xin chào,User"
+            android:text="@string/xin_ch_o_user"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginTop="50dp"

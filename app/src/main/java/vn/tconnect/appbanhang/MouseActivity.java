@@ -1,31 +1,19 @@
 package vn.tconnect.appbanhang;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.navigation.NavigationView;
+public class MouseActivity extends AppCompatActivity {
 
-import com.google.android.material.navigation.NavigationView;
-
-public class MainActivity extends AppCompatActivity  {
-    // khai báo các biến giao diện
     DrawerLayout drawerLayout;
     ImageView menu;
     LinearLayout home,mouse,keyboard,laptop,monitor,news,headset,contact,logout;
@@ -34,7 +22,7 @@ public class MainActivity extends AppCompatActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_mouse);
         // ánh xạ id cho các biến giao diện
         drawerLayout =findViewById(R.id.drawer_layout);
         menu =findViewById(R.id.menu);
@@ -57,21 +45,21 @@ public class MainActivity extends AppCompatActivity  {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                recreate();
-            }
-        });
-        mouse.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                redirectActivity(MainActivity.this,MouseActivity.class);
+                redirectActivity(MouseActivity.this,MainActivity.class);
             }
         });
 
+        mouse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                recreate();
+            }
+        });
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this,"Đăng xuất",Toast.LENGTH_SHORT).show();
+                Toast.makeText(MouseActivity.this,"Đăng xuất",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -85,7 +73,7 @@ public class MainActivity extends AppCompatActivity  {
         }
     }
 
-    public static void redirectActivity(Activity activity,Class secondActivity){
+    public static void redirectActivity(Activity activity, Class secondActivity){
         Intent intent = new Intent(activity,secondActivity);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         activity.startActivity(intent);
