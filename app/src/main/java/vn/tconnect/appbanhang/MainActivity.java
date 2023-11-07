@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -24,8 +25,12 @@ import com.google.android.material.navigation.NavigationView;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity  {
     // khai báo các biến giao diện
+    ViewPager2 viewPager2;
     DrawerLayout drawerLayout;
     ImageView menu;
     LinearLayout home,mouse,keyboard,laptop,monitor,news,headset,contact,logout;
@@ -75,6 +80,14 @@ public class MainActivity extends AppCompatActivity  {
             }
         });
 
+        viewPager2= findViewById(R.id.saleViewPager);
+        List<SlideItem> slideItems=new ArrayList<>();
+        slideItems.add(new SlideItem(R.drawable.anh1));
+        slideItems.add(new SlideItem(R.drawable.anh2));
+        slideItems.add(new SlideItem(R.drawable.anh3));
+
+        viewPager2.setAdapter(new Slide_Adapter(slideItems,viewPager2));
+
     }
     public static void openDrawer(DrawerLayout drawerLayout){
         drawerLayout.openDrawer(GravityCompat.START);
@@ -97,4 +110,5 @@ public class MainActivity extends AppCompatActivity  {
         super.onPause();
         closeDrawer(drawerLayout);
     }
+
 }
