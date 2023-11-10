@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/xin_ch_o_user"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="20dp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardBackgroundColor="@color/lavender"
+            app:cardCornerRadius="30dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+
+                    android:padding="20dp"
+                    android:drawableLeft="@drawable/search_icon"
+                    />
+
+                <EditText
+                    android:layout_width="260dp"
+                    android:layout_height="match_parent"
+                    android:background="#00FFFFFF"
+                    android:hint="Tìm Kiếm"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/voice_icon"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="30dp">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/saleViewPager"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="55dp">
+
+        </androidx.viewpager2.widget.ViewPager2>
+
+    </RelativeLayout>
+</LinearLayout>
